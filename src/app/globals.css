@@ -7,29 +7,33 @@
     .btn-primary {
         @apply 
         text-2xl
-        bg-red-500 text-white px-4 py-2 rounded-full 
+        font-bold
+        bg-orange-600 text-white px-4 py-2 rounded-full 
         inline-flex items-center justify-center tracking-tighter 
         transition-colors duration-200 border 
-        border-red-500 hover:bg-transparent 
-        hover:text-white 
-        hover:border-red-500;
+        border-orange-600 hover:bg-white
+        hover:text-orange-600
+        hover:border-orange-600
+        hover:border-2;
     }
 
-    .hover-effect {
-        @apply relative inline-block text-white no-underline;
+    .logo-ticker-image {
+        @apply h-8 w-auto;
     }
 
-    .hover-effect::after {
-        content: '';
-        @apply absolute block h-0.5 bg-red-500;
-        width: 0;
-        margin-top: 1;
-        right: 1/2;
-        transition: width 0.3s ease, right 0.3s ease;
+    .section-title {
+        @apply text-center text-5xl font-bold leading-[30px] tracking-tight;
     }
 
-    .hover-effect:hover::after {
-        width: 100%;
+    .section-description {
+        @apply text-center text-[18px] leading-[30px] tracking-tight;
     }
 
+    .navbar-item {
+        @apply text-white;
+    }
+
+    .navbar-item:hover {
+        @apply text-orange-600; 
+    }
 }

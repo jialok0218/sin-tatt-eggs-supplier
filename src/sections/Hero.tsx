@@ -13,7 +13,7 @@ export const Hero = () => {
                         Sin Tatt
                         </h1>
                         <h1 className="text-5xl md:text-6xl font-bold tracking-tight text-white">
-                            Your Source of Quality Eggs
+                            Your Source of <span className="text-yellow-500">Quality Eggs</span>
                         </h1>
                         <p className="text-xl text-white tracking-tight mt-6">
                             Providing you with the best quality eggs from our farm to your table.

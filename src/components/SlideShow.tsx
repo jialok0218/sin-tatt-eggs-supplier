@@ -5,12 +5,16 @@ import { motion, AnimatePresence } from 'framer-motion';
 import background1 from '@/assets/background1.jpg'
 import background2 from '@/assets/background2.jpg'
 import background3 from '@/assets/background3.jpg'
+import background4 from '@/assets/background4.jpg'
+import background5 from '@/assets/background5.jpg'
 import { StaticImageData } from 'next/image';
 
 const images: StaticImageData[] = [
   background1,
   background2,
-  background3
+  background3,
+  background4,
+  background5
 ];
 
 export const Slideshow = () => {
@@ -31,7 +35,7 @@ export const Slideshow = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        transition={{ duration: 1 }}
+        transition={{ duration: 1.5, ease: "easeInOut" }}
         style={{
           position: 'absolute',
           top: 0,

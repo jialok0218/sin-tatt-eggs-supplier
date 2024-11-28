@@ -9,7 +9,7 @@ import { motion } from "framer-motion"
 const testimonials = [
     {
         name: "James Tan",
-        text: "As a restaurant owner, their consistent egg quality and reliable delivery have been crucial for our kitchen operations. Couldn't be happier!",
+        text: "As a restaurant owner, their consistent egg quality and reliable delivery have been crucial for our kitchen operations. Couldn&apos;t be happier!",
         image: egg1
     },
     {
@@ -39,7 +39,7 @@ const testimonials = [
     },
     {
         name: "Michael Lee",
-        text: "The packaging is excellent - we've had minimal breakage issues since switching to their service. Perfect for our distribution needs.",
+        text: "The packaging is excellent - we&apos;ve had minimal breakage issues since switching to their service. Perfect for our distribution needs.",
         image: egg1
     },
     {
@@ -49,7 +49,7 @@ const testimonials = [
     },
     {
         name: "Priya Shankar",
-        text: "Their reliable delivery system gives us complete confidence in the eggs' quality. Our customers appreciate the consistency.",
+        text: "Their reliable delivery system gives us complete confidence in the eggs&apos; quality. Our customers appreciate the consistency.",
         image: egg1
     }
 ]

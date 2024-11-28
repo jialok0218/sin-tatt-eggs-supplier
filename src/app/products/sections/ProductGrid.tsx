@@ -31,8 +31,8 @@ const products: Product[] = [
     image: eggProduct.src
   },
   {
-    name: "Liquid Egg",
-    description: "Convenient liquid egg products for commercial and home use.",
+    name: "Salted Egg",
+    description: "Traditional salted eggs, perfect for various culinary uses.",
     image: eggProduct.src
   },
   {

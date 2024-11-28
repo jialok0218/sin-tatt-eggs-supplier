@@ -1,47 +1,90 @@
-import Image from 'next/image';
+'use client';
+
 import yolk from '@/assets/yolk.png';
 import eggShell1 from '@/assets/eggShell1.png';
 import eggShell2 from '@/assets/eggShell2.png';
+import { motion, useScroll, useTransform, useMotionValueEvent } from 'framer-motion';
+import { useRef } from 'react';
+import Link from 'next/link'
 
 export const Hero = () => {
+    const heroRef = useRef(null);
+    const { scrollYProgress } = useScroll({
+        target: heroRef,
+        offset: ["start end", "end start"],
+    });
+
+const translateY = useTransform(scrollYProgress, [0, 1], [150, -150]);
+
     return (
-        <section className="pt-8 pb-20 md:pt-5 md:pb-10 overflow-x-clip">
+        <section  ref={heroRef} className="pt-4 pb-10 md:pt-5 md:pb-10 overflow-x-clip">
             <div className="container">
                 <div className="md:flex items-center">
-                    <div className="md:w-[478px] mt-44">
-                         <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-orange-600">
-                        Sin Tatt
-                        </h1>
-                        <h1 className="text-5xl md:text-6xl font-bold tracking-tight text-white">
+                      <div className="mt-[300px] md:w-[478px] md:mt-44"> 
+                         <motion.h1 
+                            className="hero-title-primary"
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 1 }}
+                        >
+                            Sin Tatt
+                        </motion.h1>
+                        <motion.h1 
+                            className="hero-title-secondary"
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 1, delay: 0.2 }}
+                        >
                             Your Source of <span className="text-yellow-500">Quality Eggs</span>
-                        </h1>
-                        <p className="text-xl text-white tracking-tight mt-6">
-                            Providing you with the best quality eggs from our farm to your table.
-                        </p>
+                        </motion.h1>
+                        <motion.p 
+                            className="text-xl text-white tracking-tight mt-6"
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 1, delay: 0.4 }}
+                        >
+                            Bringing fresh, quality eggs to your business daily.
+                        </motion.p>
                 <div className="flex gap-1 items-center mt-[30px]">
                     <button className="btn-primary">Discover More</button>
                 </div>
                 </div>
-                <div className="mt-20 md:mt-10 md:h-[648px] md:flex-1 relative">
-                <Image
-                            src={yolk}
+                <div className="mt-24 md:h-[648px] md:flex-1 relative">
+                <motion.img
+                            src={yolk.src}
                             alt="Egg Yolk"
                             width={600} 
                             height={600} 
-                            className="md:absolute md:max-w-none md:left-0 md:top-24 lg:left-0"
+                            className="md:block hidden absolute md:max-w-none md:left-0 md:top-24 lg:left-0"
+                            animate={{ 
+                                translateY: [-30, 30],
+                            }}
+                            transition={{ 
+                                repeat: Infinity,
+                                repeatType: "mirror",
+                                duration: 2, 
+                                ease: "easeInOut"
+                            }}
                         />
-                <Image 
-                    src={eggShell1} 
+                <motion.img
+                    src={eggShell1.src} 
                     alt="First Egg Shell" 
                     width={220}
                     height={220}
-                    className="hidden md:block -top-8 -left-32 md:absolute rotate-[30deg]"
+                    className="md:block hidden -top-8 -left-32 md:absolute rotate-[30deg]"
+                    style={{
+                        translateY: translateY
+                    }}
                     />
-                <Image 
-                    src={eggShell2} 
+                <motion.img
+                    src={eggShell2.src} 
                     alt="Second Egg Shell" 
                     width={220}
-                    className="hidden md:block absolute top-[524px] left-[448px] rotate-[30deg]"
+                    className="md:block hidden absolute top-[524px] left-[448px] rotate-[30deg]"
+                    style={{
+                        rotate: 30,
+                        translateY: translateY
+                    }}
                     />
                 </div>
                 </div>

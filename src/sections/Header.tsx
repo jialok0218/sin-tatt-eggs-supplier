@@ -2,7 +2,7 @@ import NavBar from '@/components/NavBar';
 
 export const Header = () => {
     return (
-        <header className="sticky top-0 z-50 backdrop-blur-sm">
+        <header className="md:sticky relative top-0 z-40 md:backdrop-blur-sm">
             <NavBar />
         </header>
     );

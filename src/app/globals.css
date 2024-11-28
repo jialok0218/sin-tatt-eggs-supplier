@@ -8,12 +8,12 @@
         @apply 
         text-2xl
         font-bold
-        bg-orange-600 text-white px-4 py-2 rounded-full 
+        bg-red-600 text-white px-4 py-2 rounded-full 
         inline-flex items-center justify-center tracking-tighter 
         transition-colors duration-200 border 
-        border-orange-600 hover:bg-white
-        hover:text-orange-600
-        hover:border-orange-600
+        border-red-600 hover:bg-white
+        hover:text-red-600
+        hover:border-red-600
         hover:border-2;
     }
 
@@ -29,11 +29,35 @@
         @apply text-center text-[18px] leading-[30px] tracking-tight;
     }
 
+    .section-heading {
+        @apply text-center text-[22px] leading-[30px] tracking-tight;
+    }
+
     .navbar-item {
         @apply text-white;
     }
 
     .navbar-item:hover {
-        @apply text-orange-600; 
+        @apply text-red-600; 
+    }
+
+    .navbar-active {
+        @apply text-red-600;
+    }
+
+    .card {
+        @apply p-10 border-solid border-[#222222]/10 rounded-3xl shadow-[0_7px_14px_#EAEAEA] max-w-xs w-full;
+    }
+
+    .hero-title-primary {
+        @apply text-5xl md:text-7xl font-bold tracking-tight text-red-600;
+    }
+
+    .hero-title-secondary {
+        @apply text-4xl md:text-5xl font-bold tracking-tight text-white;
+    }
+
+    .hero-description {
+        @apply text-xl text-white tracking-tight mt-6;
     }
 }

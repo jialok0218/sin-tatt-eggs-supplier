@@ -1,9 +1,13 @@
+'use client';
+
+import { motion, useInView } from 'framer-motion';
+import { useRef } from 'react';
 import Image from 'next/image';
 import logistics from '@/assets/logistics.png';
 import quality from '@/assets/quality.png';
 import pricing from '@/assets/pricing.png';
 import afterSales from '@/assets/afterSales.png';
-import eggTray from '@/assets/eggTray.jpg';
+import ServicesBackground from '@/assets/background7.jpg';
 
 const services = [
     {
@@ -33,20 +37,45 @@ const services = [
 ];
 
 export const ServiceHighlights = () => {
+    const ref = useRef(null);
+    const isInView = useInView(ref, { once: true });
+
     return (
-        <section
-        className="py-20 bg-gray-100 text-center"
-    >
-            <div className="container mx-auto">
-                <h2 className="section-title mb-4">
-                    <span className="text-yellow-500">"Eggsquisite"</span> Service, Reliable Delivery 
-                </h2>
-                <p className="section-description mb-8">
-                    Delivering quality and freshness with every egg, backed by our dedicated team and efficient logistics.
-                </p>
-                <div className="grid grid-cols-1 gap-6 sm:grid-cols-1 lg:grid-cols-2">
+        <section ref={ref} className="py-24 relative text-center">
+            <div className="absolute inset-0">
+                <Image
+                    src={ServicesBackground}
+                    alt="Services Background"
+                    fill
+                    className="object-cover blur-[10px]"
+                    priority
+                />
+                <div className="absolute inset-0 bg-black/30 backdrop-blur-sm" />
+            </div>
+            <div className="container relative z-10">
+                <motion.h2
+                    className="section-title mb-5"
+                    initial={{ opacity: 0, y: -20 }}
+                    animate={isInView ? { opacity: 1, y: 0 } : {}}
+                    transition={{ duration: 1 }}
+                >
+                    <span className="text-yellow-400">"Eggsquisite"</span> <span className="text-white">Service, Reliable Delivery</span> 
+                </motion.h2>
+                <div className="grid grid-cols-1 gap-6 sm:grid-cols-1 lg:grid-cols-2 justify-center mt-10">
                     {services.map((service, index) => (
-                        <div key={index} className="p-8 bg-white shadow-lg rounded-3xl">
+                        <motion.div
+                            key={index}
+                            className="p-8 bg-white shadow-lg rounded-3xl"
+                            initial={{ opacity: 0, scale: 0.5, rotate: -5 }}
+                            animate={isInView ? { opacity: 1, scale: 1, rotate: 0 } : {}}
+                            transition={{
+                                duration: 2,
+                                type: "spring",
+                                stiffness: 100,
+                                damping: 10,
+                                delay: index * 0.2, // Stagger the animations
+                            }}
+                        >
                             <div className="flex justify-center items-center h-32 mb-4">
                                 <Image
                                     src={service.image}
@@ -62,7 +91,7 @@ export const ServiceHighlights = () => {
                             <p className="text-gray-800">
                                 {service.description}
                             </p>
-                        </div>
+                        </motion.div>
                     ))}
                 </div>
             </div>

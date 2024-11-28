@@ -10,10 +10,15 @@ const Page = async () => {
   const galleryDir = path.join(process.cwd(), '/src/assets/gallery')
   const imageFiles = fs.readdirSync(galleryDir)
 
-  const images = imageFiles.map(file => ({
-    src: require(`@/assets/gallery/${file}`).default,
-    alt: file.split('.')[0]
-  }))
+  const images = await Promise.all(
+    imageFiles.map(async (file) => {
+      const imageModule = await import(`@/assets/gallery/${file}`)
+      return {
+        src: imageModule.default.src,
+        alt: file.split('.')[0]
+      }
+    })
+  )
 
   return (
     <>

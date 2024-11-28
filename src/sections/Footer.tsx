@@ -24,7 +24,7 @@ export const Footer = () => {
                         <h3 className="text-xl font-bold mb-4 text-yellow-500">Sin Tatt Eggs Supplier Sdn. Bhd.</h3>
                         <p className="text-gray-300">
                             Your trusted partner in quality egg supply since establishment. 
-                            Delivering fresh eggs daily to businesses across Malaysia.
+                            Delivering fresh eggs daily to businesses across Northern Malaysia.
                         </p>
                     </div>
                     <div>

@@ -5,6 +5,7 @@ import { twMerge } from "tailwind-merge";
 import { Header } from '@/sections/Header';
 import { Footer } from '@/sections/Footer';
 import { BackToTop } from '@/components/BackToTop';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 const dmSans = DM_Sans({
   subsets: ['latin'],
@@ -47,6 +48,7 @@ export default function RootLayout({
         </main>
         <Footer />
         <BackToTop />
+        <SpeedInsights />
       </body>
     </html>
   );

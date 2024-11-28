@@ -39,7 +39,7 @@ const testimonials = [
     },
     {
         name: "Michael Lee",
-        text: "The packaging is excellent - we&apos;ve had minimal breakage issues since switching to their service. Perfect for our distribution needs.",
+        text: "The packaging is excellent - we had minimal breakage issues since switching to their service. Perfect for our distribution needs.",
         image: egg1
     },
     {
@@ -49,7 +49,7 @@ const testimonials = [
     },
     {
         name: "Priya Shankar",
-        text: "Their reliable delivery system gives us complete confidence in the eggs&apos; quality. Our customers appreciate the consistency.",
+        text: "Their reliable delivery system gives us complete confidence in the eggs's quality. Our customers appreciate the consistency.",
         image: egg1
     }
 ]

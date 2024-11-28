@@ -59,7 +59,7 @@ export const ServiceHighlights = () => {
                     animate={isInView ? { opacity: 1, y: 0 } : {}}
                     transition={{ duration: 1 }}
                 >
-                    <span className="text-yellow-400">"Eggsquisite"</span> <span className="text-white">Service, Reliable Delivery</span> 
+                    <span className="text-yellow-400">&ldquo;Eggsquisite&rdquo;</span> <span className="text-white">Service, Reliable Delivery</span> 
                 </motion.h2>
                 <div className="grid grid-cols-1 gap-6 sm:grid-cols-1 lg:grid-cols-2 justify-center mt-10">
                     {services.map((service, index) => (

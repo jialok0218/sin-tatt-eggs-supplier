@@ -53,7 +53,7 @@ export const ContactInfo: React.FC = () => {
 
         {/* Contact Cards */}
         <div className="grid md:grid-cols-3 gap-8">
-          {contactCards.map((card, index) => (
+          {contactCards.map((card) => (
             <motion.div
               key={card.title}
               initial={{ opacity: 0, y: 20 }}

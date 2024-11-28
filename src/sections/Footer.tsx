@@ -4,6 +4,7 @@ import { useRef } from 'react';
 import { HiMail } from "react-icons/hi";
 import { HiMapPin } from "react-icons/hi2";
 import { BsTelephone } from "react-icons/bs";
+import Link from 'next/link'
 
 export const Footer = () => {
     const ref = useRef(null);
@@ -29,11 +30,11 @@ export const Footer = () => {
                     <div>
                         <h3 className="text-xl font-bold mb-4 text-yellow-500">Quick Links</h3>
                         <ul className="space-y-2">
-                            <li><a href="/" className="text-gray-300 hover:text-yellow-500 transition-colors">Home</a></li>
-                            <li><a href="/about-us" className="text-gray-300 hover:text-yellow-500 transition-colors">About Us</a></li>
-                            <li><a href="/products" className="text-gray-300 hover:text-yellow-500 transition-colors">Products</a></li>
-                            <li><a href="/gallery" className="text-gray-300 hover:text-yellow-500 transition-colors">Gallery</a></li>
-                            <li><a href="/contact-us" className="text-gray-300 hover:text-yellow-500 transition-colors">Contact Us</a></li>
+                            <li><Link href="/" className="text-gray-300 hover:text-yellow-500 transition-colors">Home</Link></li>
+                            <li><Link href="/about-us" className="text-gray-300 hover:text-yellow-500 transition-colors">About Us</Link></li>
+                            <li><Link href="/products" className="text-gray-300 hover:text-yellow-500 transition-colors">Products</Link></li>
+                            <li><Link href="/gallery" className="text-gray-300 hover:text-yellow-500 transition-colors">Gallery</Link></li>
+                            <li><Link href="/contact-us" className="text-gray-300 hover:text-yellow-500 transition-colors">Contact Us</Link></li>
                         </ul>
                     </div>
 

@@ -3,7 +3,6 @@ import React from "react";
 import egg1 from "@/assets/egg1.png"
 import egg2 from "@/assets/egg2.png"
 import Image from "next/image"
-import { twMerge } from "tailwind-merge"
 import { motion } from "framer-motion"
 
 

@@ -3,9 +3,8 @@
 import yolk from '@/assets/yolk.png';
 import eggShell1 from '@/assets/eggShell1.png';
 import eggShell2 from '@/assets/eggShell2.png';
-import { motion, useScroll, useTransform, useMotionValueEvent } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
-import Link from 'next/link'
 
 export const Hero = () => {
     const heroRef = useRef(null);

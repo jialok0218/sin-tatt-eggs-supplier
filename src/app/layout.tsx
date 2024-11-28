@@ -11,8 +11,15 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Sin Tatt Eggs Supplier",
-  description: "Supplying premium farm-fresh eggs with a commitment to quality and sustainability.",
+  title: 'Sintat Eggs - Premium Egg Supplier in Malaysia',
+  description: "Supplying premium farm-fresh eggs with a commitment to quality and sustainability.",  keywords: 'eggs, wholesale eggs, Malaysia eggs, egg supplier, fresh eggs, Kuala Lumpur eggs',
+  openGraph: {
+    title: 'Sintat Eggs - Premium Egg Supplier in Malaysia',
+    description: "Supplying premium farm-fresh eggs with a commitment to quality and sustainability.",    url: 'https://www.sintatteggs.com',
+    siteName: 'Sintat Eggs',
+    locale: 'en_MY',
+    type: 'website',
+  },
   icons: {
     icon: [
       {

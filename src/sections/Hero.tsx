@@ -5,6 +5,7 @@ import eggShell1 from '@/assets/eggShell1.png';
 import eggShell2 from '@/assets/eggShell2.png';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
+import Link from 'next/link';
 
 export const Hero = () => {
     const heroRef = useRef(null);
@@ -45,7 +46,9 @@ const translateY = useTransform(scrollYProgress, [0, 1], [150, -150]);
                             Bringing fresh, quality eggs to your business daily.
                         </motion.p>
                 <div className="flex gap-1 items-center mt-[30px]">
-                    <button className="btn-primary">Discover More</button>
+                    <Link href="/products">
+                        <button className="btn-primary">Discover More</button>
+                    </Link>
                 </div>
                 </div>
                 <div className="mt-24 md:h-[648px] md:flex-1 relative">

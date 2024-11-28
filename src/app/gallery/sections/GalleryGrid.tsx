@@ -47,7 +47,7 @@ export const GalleryGrid: React.FC<GalleryGridProps> = ({ images }) => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {images.map((image, index) => (
             <motion.div
               key={index}
@@ -64,7 +64,7 @@ export const GalleryGrid: React.FC<GalleryGridProps> = ({ images }) => {
                 alt={image.alt}
                 fill
                 className="object-cover transition-transform duration-300"
-                sizes="(max-width: 768px) 50vw, (max-width: 1200px) 50vw, 33vw"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 priority={index < 6}
               />
             </motion.div>

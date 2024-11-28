@@ -19,7 +19,7 @@ const translateY = useTransform(scrollYProgress, [0, 1], [150, -150]);
         <section  ref={heroRef} className="pt-4 pb-10 md:pt-5 md:pb-10 overflow-x-clip">
             <div className="container">
                 <div className="md:flex items-center">
-                      <div className="mt-[300px] md:w-[478px] md:mt-44"> 
+                      <div className="mt-[200px] md:w-[478px] md:mt-44"> 
                          <motion.h1 
                             className="hero-title-primary"
                             initial={{ opacity: 0, y: 20 }}

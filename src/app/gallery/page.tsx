@@ -11,7 +11,7 @@ const Page = async () => {
   const imageFiles = fs.readdirSync(galleryDir)
 
   const images = imageFiles.map(file => ({
-    src: `/assets/gallery/${file}`,
+    src: require(`@/assets/gallery/${file}`).default,
     alt: file.split('.')[0]
   }))
 

@@ -158,7 +158,7 @@ export const ProductGrid: React.FC = () => {
               href="/contact-us" 
               className="font-bold text-red-600 hover:text-red-700 transition-colors duration-300 underline"
             >
-              Sin Tatt Eggs Supplier
+              here
             </Link>
           </p>
         </motion.div>

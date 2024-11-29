@@ -24,12 +24,18 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
-        url: '/sin-tatt-logo.ico',
+        url: '/favicon.ico',
+        sizes: '16x16',
+        type: 'image/x-icon',
+      },
+    ],
+    apple: [
+      {
+        url: '/favicon.ico',
+        sizes: '180x180',
+        type: 'image/x-icon',
       }
     ],
-    apple: {
-      url: '/sin-tatt-logo.ico',
-    },
   },
 };
 

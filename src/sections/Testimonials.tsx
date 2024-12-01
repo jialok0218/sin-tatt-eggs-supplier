@@ -24,7 +24,7 @@ const testimonials = [
     },
     {
         name: "Steven Wong",
-        text: "The tracking system for our orders is fantastic. Makes inventory management so much easier for our supermarket.",
+        text: "Sin Tatt's premium eggs have consistently exceeded our quality standards. Their prompt delivery service ensures we always have fresh stock.",
         image: egg2
     },
     {

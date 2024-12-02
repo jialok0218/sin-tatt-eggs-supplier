@@ -21,28 +21,17 @@ const Page = async () => {
   const teamFiles = fs.readdirSync(teamDir)
   const productionFiles = fs.readdirSync(productionDir)
 
-  // Load team images
-  const teamImages = await Promise.all(
-    teamFiles.map(async (file) => {
-      const imageModule = await import(`@/assets/gallery/team/${file}`)
-      return {
-        src: imageModule.default.src,
-        alt: file.split('.')[0],
-        category: 'team'
-      }
-    })
-  )
-  
-  const productionImages = await Promise.all(
-    productionFiles.map(async (file) => {
-      const imageModule = await import(`@/assets/gallery/production/${file}`)
-      return {
-        src: imageModule.default.src,
-        alt: file.split('.')[0],
-        category: 'production'
-      }
-    })
-  )
+  const teamImages = teamFiles.map((file) => ({
+    src: `/assets/gallery/team/${file}`,
+    alt: file.split('.')[0],
+    category: 'team'
+  }))
+
+  const productionImages = productionFiles.map((file) => ({
+    src: `/assets/gallery/production/${file}`,
+    alt: file.split('.')[0],
+    category: 'production'
+  }))
 
   const allImages = [...teamImages, ...productionImages]
 

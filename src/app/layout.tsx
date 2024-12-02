@@ -26,7 +26,6 @@ export const metadata: Metadata = {
       {
         url: '/favicon.ico',
         sizes: '16x16',
-        type: 'image/x-icon',
       },
     ],
     shortcut: [
@@ -36,7 +35,6 @@ export const metadata: Metadata = {
       {
         url: '/favicon.ico',
         sizes: '180x180',
-        type: 'image/x-icon',
       }
     ],
   },

@@ -9,7 +9,6 @@ import { useImageModal } from '@/hooks/useImageModal'
 interface ImageData {
   src: string
   alt: string
-  category: string
 }
 
 interface GalleryGridProps {
@@ -18,30 +17,6 @@ interface GalleryGridProps {
 
 export const GalleryGrid: React.FC<GalleryGridProps> = ({ images }) => {
   const { isModalOpen, modalImage, openModal, closeModal } = useImageModal()
-  const [currentPage, setCurrentPage] = React.useState(1)
-  const [activeTab, setActiveTab] = React.useState('all')
-  const imagesPerPage = 9
-
-  // Filter images based on active tab
-  const filteredImages = React.useMemo(() => {
-    if (activeTab === 'all') return images
-    return images.filter(image => image.category === activeTab)
-  }, [images, activeTab])
-
-  // Calculate pagination
-  const indexOfLastImage = currentPage * imagesPerPage
-  const indexOfFirstImage = indexOfLastImage - imagesPerPage
-  const currentImages = filteredImages.slice(indexOfFirstImage, indexOfLastImage)
-  const totalPages = Math.ceil(filteredImages.length / imagesPerPage)
-
-  // Reset to first page when changing tabs
-  React.useEffect(() => {
-    setCurrentPage(1)
-  }, [activeTab])
-
-  const handlePageClick = (pageNumber: number) => {
-    setCurrentPage(pageNumber)
-  }
 
   if (images.length === 0) {
     return (
@@ -72,42 +47,8 @@ export const GalleryGrid: React.FC<GalleryGridProps> = ({ images }) => {
           </p>
         </motion.div>
 
-        {/* Add Tab Navigation */}
-        <div className="flex justify-center mb-8">
-          <button
-            onClick={() => setActiveTab('all')}
-            className={`px-6 py-2 mx-2 rounded-full ${
-              activeTab === 'all' 
-                ? 'bg-red-600 text-white' 
-                : 'bg-gray-200 hover:bg-gray-300'
-            }`}
-          >
-            All
-          </button>
-          <button
-            onClick={() => setActiveTab('team')}
-            className={`px-6 py-2 mx-2 rounded-full ${
-              activeTab === 'team' 
-                ? 'bg-red-600 text-white' 
-                : 'bg-gray-200 hover:bg-gray-300'
-            }`}
-          >
-            Team
-          </button>
-          <button
-            onClick={() => setActiveTab('production')}
-            className={`px-6 py-2 mx-2 rounded-full ${
-              activeTab === 'production' 
-                ? 'bg-red-600 text-white' 
-                : 'bg-gray-200 hover:bg-gray-300'
-            }`}
-          >
-            Production
-          </button>
-        </div>
-
-        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {currentImages.map((image, index) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {images.map((image, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 20 }}
@@ -127,20 +68,6 @@ export const GalleryGrid: React.FC<GalleryGridProps> = ({ images }) => {
                 priority={index < 6}
               />
             </motion.div>
-          ))}
-        </div>
-
-        <div className="flex justify-center mt-8">
-          {Array.from({ length: totalPages }, (_, index) => (
-            <button
-              key={index}
-              onClick={() => handlePageClick(index + 1)}
-              className={`px-4 py-2 mx-1 rounded ${
-                currentPage === index + 1 ? 'bg-red-600 text-white' : 'bg-gray-300'
-              }`}
-            >
-              {index + 1}
-            </button>
           ))}
         </div>
 

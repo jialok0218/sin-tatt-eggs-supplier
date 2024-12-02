@@ -30,13 +30,6 @@ const nextConfig: NextConfig = {
       },
     ]
   },
-  images: {
-    remotePatterns: [
-      {
-        hostname: 'u3uwik5lvx1iudpn.public.blob.vercel-storage.com',
-      },
-    ],
-  },
 }
 
 export default nextConfig

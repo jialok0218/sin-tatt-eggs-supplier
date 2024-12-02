@@ -1,7 +1,8 @@
-import { list } from '@vercel/blob';
 import React from 'react'
 import { GalleryHero } from './sections/GalleryHero'
 import { GalleryGrid } from './sections/GalleryGrid'
+import fs from 'fs'
+import path from 'path'
 import type { Metadata } from 'next'
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -11,28 +12,39 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 const Page = async () => {
-  // List all blobs in the team and production folders
-  const { blobs: teamBlobs } = await list({ prefix: 'team/' });
-  const { blobs: productionBlobs } = await list({ prefix: 'production/' });
+  const baseDir = path.join(process.cwd(), '/src/assets/gallery')
+  
+  // Read images from both directories
+  const teamDir = path.join(baseDir, 'team')
+  const productionDir = path.join(baseDir, 'production')
+  
+  const teamFiles = fs.readdirSync(teamDir)
+  const productionFiles = fs.readdirSync(productionDir)
 
-  // Filter out directories and transform blobs to image data
-  const teamImages = teamBlobs
-    .filter(blob => !blob.url.endsWith('/'))
-    .map(blob => ({
-      src: blob.url,
-      alt: blob.pathname.split('/').pop()?.split('.')[0] || '',
-      category: 'team'
-    }));
+  // Load team images
+  const teamImages = await Promise.all(
+    teamFiles.map(async (file) => {
+      const imageModule = await import(`@/assets/gallery/team/${file}`)
+      return {
+        src: imageModule.default.src,
+        alt: file.split('.')[0],
+        category: 'team'
+      }
+    })
+  )
+  
+  const productionImages = await Promise.all(
+    productionFiles.map(async (file) => {
+      const imageModule = await import(`@/assets/gallery/production/${file}`)
+      return {
+        src: imageModule.default.src,
+        alt: file.split('.')[0],
+        category: 'production'
+      }
+    })
+  )
 
-  const productionImages = productionBlobs
-    .filter(blob => !blob.url.endsWith('/'))
-    .map(blob => ({
-      src: blob.url,
-      alt: blob.pathname.split('/').pop()?.split('.')[0] || '',
-      category: 'production'
-    }));
-
-  const allImages = [...teamImages, ...productionImages];
+  const allImages = [...teamImages, ...productionImages]
 
   return (
     <>

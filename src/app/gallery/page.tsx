@@ -3,12 +3,12 @@ import { GalleryHero } from './sections/GalleryHero'
 import { GalleryGrid } from './sections/GalleryGrid'
 import fs from 'fs'
 import path from 'path'
-import type { Metadata } from 'next';
+import type { Metadata } from 'next'
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
     title: 'Gallery',
-  };
+  }
 }
 
 // Mark as server component
@@ -17,10 +17,16 @@ const Page = async () => {
   const galleryDir = path.join(process.cwd(), '/src/assets/gallery')
   const imageFiles = fs.readdirSync(galleryDir)
 
-  const images = imageFiles.map(file => ({
-    src: require(`@/assets/gallery/${file}`).default,
-    alt: file.split('.')[0]
-  }))
+  const images = await Promise.all(
+    imageFiles.map(async (file) => {
+      const imageModule = await import(`@/assets/gallery/${file}`)
+      return {
+        src: imageModule.default,
+        alt: file.split('.')[0],
+        category: 'all'  // Since we're not using folders to categorize
+      }
+    })
+  )
 
   return (
     <>

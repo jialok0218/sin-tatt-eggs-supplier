@@ -19,9 +19,11 @@
     "tailwind-merge": "^2.5.4"
   },
   "devDependencies": {
+    "@types/dotenv": "^8.2.3",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "dotenv": "^16.4.5",
     "eslint": "^8",
     "eslint-config-next": "15.0.3",
     "postcss": "^8",

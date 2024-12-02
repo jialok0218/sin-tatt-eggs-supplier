@@ -3,10 +3,15 @@ import { GalleryHero } from './sections/GalleryHero'
 import { GalleryGrid } from './sections/GalleryGrid'
 import fs from 'fs'
 import path from 'path'
+import type { Metadata } from 'next';
 
-// Mark as server component
+export async function generateMetadata(): Promise<Metadata> {
+  return {
+    title: 'Gallery',
+  };
+}
+
 const Page = async () => {
-  // Get all files from the gallery directory
   const galleryDir = path.join(process.cwd(), '/src/assets/gallery')
   const imageFiles = fs.readdirSync(galleryDir)
 

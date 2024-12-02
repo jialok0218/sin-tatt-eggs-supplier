@@ -2,7 +2,7 @@
 
 import React from 'react'
 import { PageHero } from '@/components/PageHero'
-import ContactHeroBackground from '@/assets/storylinePresent_2.png'
+import ContactHeroBackground from '@/assets/gallery/team/DSC00022.jpg'
 
 export const ContactHero = () => {
   return (

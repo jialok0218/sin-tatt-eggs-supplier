@@ -9,7 +9,6 @@ import storyline1983_1 from '@/assets/storyline1983-1.png'
 import storyline1983_2 from '@/assets/storyline1983-2.png'
 import storyline1988 from '@/assets/storyline1988.png'
 import storyline2008_1 from '@/assets/storyline2008_1.png'
-import storyline2008_2 from '@/assets/storyline2008_2.png'
 import storylinePresent_1 from '@/assets/DJI_0337.jpg'
 import storylinePresent_2 from '@/assets/DJI_0343.jpg'
 import storylinePresent_3 from '@/assets/DSC00022.jpg'
@@ -55,7 +54,7 @@ export const StoryLine = () => {
       year: "2008",
       title: "Modern Facilities",
       description: "Upgraded to modern facilities and equipment to enhance production efficiency and quality control.",
-      images: [storyline2008_1.src, storyline2008_2.src]
+      images: [storyline2008_1.src]
     },
     {
       year: "Present",

@@ -26,19 +26,16 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      {
-        url: '/favicon.ico',
-        sizes: '16x16',
+      { 
+        url: '/favicon.ico' 
       },
     ],
-    shortcut: [
-      { url: '/favicon.ico' }
-    ],
     apple: [
-      {
-        url: '/favicon.ico',
-        sizes: '180x180',
-      }
+      { 
+        url: '/sin-tatt-logo.png', 
+        sizes: '180x180', 
+        type: 'image/png' 
+      },
     ],
   },
 };

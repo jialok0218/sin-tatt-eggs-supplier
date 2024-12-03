@@ -3,8 +3,12 @@
 import React, { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 import Image from 'next/image'
-import eggProduct from '@/assets/eggProduct.png'
 import Link from 'next/link'
+import brownEgg from '@/assets/brownEgg.png'
+import sandyEgg from '@/assets/sandyEgg.jpg'
+import omegaEgg from '@/assets/omegaEgg.jpg'
+import saltedEgg from '@/assets/saltedEgg.jpg'
+import seleniumEgg from '@/assets/seleniumEgg.jpg'
 
 interface Product {
   name: string
@@ -17,28 +21,28 @@ const products: Product[] = [
   {
     name: "Fresh Brown Egg",
     description: "Premium quality brown eggs, sorted by grade for different uses.",
-    image: eggProduct.src,
+    image: brownEgg.src,
     grades: ["Grade AA", "Grade A", "Grade B", "Grade C", "Grade D", "Grade E"]
   },
   {
     name: "Sandy Egg",
     description: "Specially sourced sandy eggs with unique texture and quality.",
-    image: eggProduct.src
+    image: sandyEgg.src
   },
   {
     name: "Omega Egg",
     description: "Enriched with Omega-3 fatty acids for enhanced nutritional value.",
-    image: eggProduct.src
+    image: omegaEgg.src
   },
   {
     name: "Salted Egg",
     description: "Traditional salted eggs, perfect for various culinary uses.",
-    image: eggProduct.src
+    image: saltedEgg.src
   },
   {
     name: "Selenium-rich Egg",
     description: "Eggs enriched with selenium for additional health benefits.",
-    image: eggProduct.src
+    image: seleniumEgg.src
   }
 ]
 
@@ -115,7 +119,7 @@ export const ProductGrid: React.FC = () => {
                   fill
                   priority
                   sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  className="object-contain"
+                  className="object-cover"
                 />
               </div>
               <div className="p-6">

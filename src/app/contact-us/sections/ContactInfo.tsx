@@ -23,6 +23,7 @@ export const ContactInfo: React.FC = () => {
       icon: <HiMapPin className="w-12 h-12 text-red-500" />,
       title: "Location",
       info: "545, Kawasan Perusahaan Tandop Baru, Alor Star, 05050, Alor Setar, Kedah",
+      link: "https://maps.app.goo.gl/5QYxbR42oMAoTPSo8",
       delay: 0.4
     },
     {

@@ -16,6 +16,7 @@ export const ContactInfo: React.FC = () => {
       icon: <HiMail className="w-12 h-12 text-red-500" />,
       title: "Email",
       info: "sa.ste545@gmail.com",
+      link: "mailto:sa.ste545@gmail.com",
       delay: 0.2
     },
     {
@@ -28,6 +29,7 @@ export const ContactInfo: React.FC = () => {
       icon: <BsTelephone className="w-12 h-12 text-red-500" />,
       title: "Contact No.",
       info: "04-772 1836",
+      link: "tel:047721836",
       delay: 0.6
     }
   ]
@@ -68,7 +70,18 @@ export const ContactInfo: React.FC = () => {
                 {card.title}
               </h3>
               <p className="text-gray-700">
-                {card.info}
+                {card.link ? (
+                  <a 
+                    href={card.link}
+                    className="hover:text-red-500 transition-colors"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {card.info}
+                  </a>
+                ) : (
+                  card.info
+                )}
               </p>
             </motion.div>
           ))}
